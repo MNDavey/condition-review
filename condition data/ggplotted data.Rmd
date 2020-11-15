@@ -1,0 +1,44 @@
+---
+title: "scatter"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+indicators <- read_csv("bioss.csv")[,1:4] %>% 
+  mutate(indicator = tolower(indicator)) #this made all names lower case 
+#read_csv gewts rid of trailing and white space 
+
+ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +geom_col() + theme(legend.position = "none") + facet_wrap (vars(method), scales = "free_y", nrow = 2) #automatically does same scale to change this adding free scales argment. 
+#nrow is 1 = next to each other, 2 = stacked 
+
+
+
+```
+```{r}
+
+ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +geom_col(position = "fill") + theme(legend.position = "none") + facet_wrap (vars(method), scales = "free_y", nrow = 2) 
+```
+
+#for the scatterplot re-shape:
+```{r}
+library(tidyr)
+
+scatterindi<- indicators %>% 
+  pivot_wider(names_from = method, values_from = mentions) %>% 
+  replace_na(list(MSP = 0, monitoring = 0)) 
+
+```
+
+```{r}
+  ggplot(scatterindi, aes(x= MSP, y= monitoring, colour = group)) + geom_jitter() #position= figure this out to spepearte dots when overlapping
+  #count, point, jitter to display it all 
+#add in shape = type when i make it 
+  
+```
+
