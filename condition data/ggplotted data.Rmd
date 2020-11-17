@@ -47,7 +47,7 @@ monitor<-indicators %>%
   filter(method == "monitoring")
 
 mon_plot<-ggplot(monitor, aes(x=group, y=mentions, fill= indicator)) +
-  geom_bar(position="stack", stat="identity")+ 
+  geom_bar(position="stack", stat="identity")+ #changed to stack bar so that you can see the # of mentions
   theme_bw()+
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
@@ -148,6 +148,9 @@ soc_plot
 ```
 
 ```{r}
+# this functionality for arranging plots if from the patchwork package
+# see here for help/more info https://gotellilab.github.io/GotelliLabMeetingHacks/NickGotelli/ggplotPatchwork.html
+
 biol_plot + phys_plot + soc_plot + plot_layout(ncol = 1)
 
 # I think I like this if you can then add the groupings of the "group" types along the y-axis as well (you would need to reorder the y-axis names based on the "group" then could add in the group in powerpoint or illustrator afterwards)
