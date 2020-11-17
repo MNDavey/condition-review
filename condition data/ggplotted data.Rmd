@@ -12,24 +12,66 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(here)
 library(tidyverse)
+library(patchwork)
 ```
 
 
 ```{r}
 indicators <- read_csv("bioss.csv")[,1:5] %>% 
-  mutate(indicator = tolower(indicator)) #this made all names lower case 
+  mutate(indicator = tolower(indicator),#this made all names lower case 
 #read_csv gewts rid of trailing and white space 
+         group = ifelse(group == "water quality", "Water Quality", as.character(group))) #there was two water quality groups so I change them to be just one now.
 
-ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +geom_col() + theme(legend.position = "none") + facet_wrap (vars(method), scales = "free_y", nrow = 2) #automatically does same scale to change this adding free scales argment. 
+ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +
+  geom_col() + 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  facet_wrap (vars(method), scales = "free_y", nrow = 2) #automatically does same scale to change this adding free scales argment. 
 #nrow is 1 = next to each other, 2 = stacked 
-
 
 
 ```
 ```{r}
-
-ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +geom_col(position = "fill") + theme(legend.position = "none") + facet_wrap (vars(method), scales = "free_y", nrow = 2) 
+# Just wondering - why are the values here between 0 and 1? Does the y axis represent the proportion of mentions of each type or??
+ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +
+  geom_col(position = "fill") + 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  facet_wrap (vars(method), scales = "free_y", nrow = 2) 
 ```
+
+
+
+```{r}
+monitor<-indicators %>% 
+  filter(method == "monitoring")
+
+mon_plot<-ggplot(monitor, aes(x=group, y=mentions, fill= indicator)) +
+  geom_bar(position="stack", stat="identity")+ 
+  theme_bw()+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  facet_wrap (vars(type), nrow = 3) 
+
+mon_plot
+```
+```{r}
+msp<-indicators %>% 
+  filter(method == "MSP")
+
+msp_plot<-ggplot(msp, aes(x=group, y=mentions, fill= indicator)) +
+  geom_bar(position="stack", stat="identity")+ 
+    theme_bw()+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  facet_wrap (vars(type), nrow = 3) 
+
+msp_plot
+```
+```{r}
+mon_plot + msp_plot
+```
+
 
 #for the scatterplot re-shape:
 ```{r}
@@ -43,7 +85,8 @@ head(scatterindi)
 ```
 
 ```{r}
-  ggplot(scatterindi, aes(x= MSP, y= monitoring, colour = group)) + geom_jitter(aes(shape = type))
+  ggplot(scatterindi, aes(x= MSP, y= monitoring, colour = group)) + 
+  geom_point(aes(shape = type))
 
 #i had to convert the NA to '0' so its dense there, maybe i should do a thing about this? 
 #i want to do something [maybe add a circle around it?] if the indicator is one that is both MSP and monitoring, unsure of how~!
@@ -53,4 +96,103 @@ head(scatterindi)
 
   
 ```
+
+# Trying a heat/tile map
+
+```{r}
+tile_plot<-ggplot(indicators, aes(method, indicator, fill = mentions)) +
+  geom_tile()+
+  scale_fill_gradient(low = "white", high = "blue") +
+  facet_wrap(~type)
+
+tile_plot
+
+# You could work on ordering the "indicators" on the y-axis into groups based on the "group" column and labelling that on the y-axis to make it clear what braod categories each fall into
+```
+
+Try plotting them separately bc obviously there isn't overlap between the biological, physical and socio-economic indicators
+```{r}
+biol<-indicators %>% 
+  filter(type == "biological")
+
+biol_plot<-ggplot(biol, aes(method, indicator, fill = mentions)) +
+  geom_tile()+
+  scale_fill_gradient(low = "white", high = "blue") +
+  facet_wrap(~type)
+
+biol_plot
+```
+
+```{r}
+phys<-indicators %>% 
+  filter(type == "Physical")
+
+phys_plot<-ggplot(phys, aes(method, indicator, fill = mentions)) +
+  geom_tile()+
+  scale_fill_gradient(low = "white", high = "blue") +
+  facet_wrap(~type)
+
+phys_plot
+```
+
+```{r}
+social<-indicators %>% 
+  filter(type == "Socio-economic")
+
+soc_plot<-ggplot(social, aes(method, indicator, fill = mentions)) +
+  geom_tile()+
+  scale_fill_gradient(low = "white", high = "blue") +
+  facet_wrap(~type)
+
+soc_plot
+```
+
+```{r}
+biol_plot + phys_plot + soc_plot + plot_layout(ncol = 1)
+
+# I think I like this if you can then add the groupings of the "group" types along the y-axis as well (you would need to reorder the y-axis names based on the "group" then could add in the group in powerpoint or illustrator afterwards)
+```
+
+
+# Trying a spider chart
+
+```{r}
+library(fmsb)
+
+# Create data: note in High school for several students
+set.seed(99)
+data <- as.data.frame(matrix( sample( 0:20 , 15 , replace=F) , ncol=5))
+colnames(data) <- c("math" , "english" , "biology" , "music" , "R-coding" )
+rownames(data) <- paste("mister" , letters[1:3] , sep="-")
+ 
+# To use the fmsb package, I have to add 2 lines to the dataframe: the max and min of each variable to show on the plot!
+data <- rbind(rep(20,5) , rep(0,5) , data)
+
+spider_data<-indicators %>% 
+  group_by(type, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "type", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data<-rbind(rep(254,3), rep(0, 3),spider_data)
+
+radarchart(spider_data)
+
+# Tutorial to make it prettier here: https://www.r-graph-gallery.com/143-spider-chart-with-saveral-individuals.html
+
+spider_data2<-indicators %>% 
+  group_by(group, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "group", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data2[is.na(spider_data2)]<-0
+
+spider_data2<-rbind(rep(145,13), rep(0, 13),spider_data2)
+
+radarchart(spider_data2)
+
+# Could do two separate ones - one for MSP an done for monitoring to show overlap of biol, phys and socio indicators if there is any
+```
+
 
