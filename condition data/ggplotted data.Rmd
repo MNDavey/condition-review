@@ -17,7 +17,7 @@ library(patchwork)
 
 
 ```{r}
-indicators <- read_csv("bioss.csv")[,1:5] %>% 
+indicators <- read_csv("conditiontable.csv")[,1:5] %>% 
   mutate(indicator = tolower(indicator),#this made all names lower case 
 #read_csv gewts rid of trailing and white space 
          group = ifelse(group == "water quality", "Water Quality", as.character(group))) #there was two water quality groups so I change them to be just one now.
