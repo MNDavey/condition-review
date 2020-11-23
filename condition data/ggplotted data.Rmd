@@ -17,10 +17,12 @@ library(patchwork)
 
 
 ```{r}
-indicators <- read_csv("conditiontable.csv")[,1:5] %>% 
-  mutate(indicator = tolower(indicator),#this made all names lower case 
+indicators <- read_csv("condata.csv")[,1:5] 
+  #mutate(indicator = tolower(indicator),#this made all names lower case 
 #read_csv gewts rid of trailing and white space 
-         group = ifelse(group == "water quality", "Water Quality", as.character(group))) #there was two water quality groups so I change them to be just one now.
+        # group = ifelse(group == "water quality", "Water Quality", as.character(group))) #there was two water quality groups so I change them to be just one now.
+
+#hashed these out because i fixed it in excel when doing quality check 
 
 ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +
   geom_col() + 
@@ -44,7 +46,7 @@ ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +
 
 ```{r}
 monitor<-indicators %>% 
-  filter(method == "monitoring")
+  filter(method == "Monitoring")
 
 mon_plot<-ggplot(monitor, aes(x=group, y=mentions, fill= indicator)) +
   geom_bar(position="stack", stat="identity")+ #changed to stack bar so that you can see the # of mentions
@@ -55,6 +57,8 @@ mon_plot<-ggplot(monitor, aes(x=group, y=mentions, fill= indicator)) +
 
 mon_plot
 ```
+
+
 ```{r}
 msp<-indicators %>% 
   filter(method == "MSP")
@@ -79,13 +83,13 @@ library(tidyr)
 
 scatterindi<- indicators %>% 
   pivot_wider(names_from = method, values_from = mentions) %>% 
-  replace_na(list(MSP = 0, monitoring = 0)) 
+  replace_na(list(MSP = 0, Monitoring = 0)) 
 head(scatterindi)
 
 ```
 
 ```{r}
-  ggplot(scatterindi, aes(x= MSP, y= monitoring, colour = group)) + 
+  ggplot(scatterindi, aes(x= MSP, y= Monitoring, colour = group)) + 
   geom_point(aes(shape = type))
 
 #i had to convert the NA to '0' so its dense there, maybe i should do a thing about this? 
@@ -113,7 +117,7 @@ tile_plot
 Try plotting them separately bc obviously there isn't overlap between the biological, physical and socio-economic indicators
 ```{r}
 biol<-indicators %>% 
-  filter(type == "biological")
+  filter(type == "Biological")
 
 biol_plot<-ggplot(biol, aes(method, indicator, fill = mentions)) +
   geom_tile()+
@@ -197,5 +201,73 @@ radarchart(spider_data2)
 
 # Could do two separate ones - one for MSP an done for monitoring to show overlap of biol, phys and socio indicators if there is any
 ```
+```{r}
+
+bio<-indicators %>% 
+  filter(type == "Biological")
+
+spider_data3<-bio %>% 
+  group_by(group, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "group", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data3[is.na(spider_data3)]<-0
+
+spider_data3<-rbind(rep(145,13), rep(0, 13),spider_data3)
+
+radarchart(spider_data3)
+```
+```{r}
+
+phys<-indicators %>% 
+  filter(type == "Physical")
+
+spider_data4<-phys %>% 
+  group_by(group, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "group", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data4[is.na(spider_data4)]<-0
+
+spider_data4<-rbind(rep(145,13), rep(0, 13),spider_data4)
+
+radarchart(spider_data4)
+```
+this one dosent work because too low indicators 
+#
+
+soc<-indicators %>% 
+  filter(type == "Socio economic")
+
+spider_data5<-soc %>% 
+  group_by(indicator, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "indicator", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data5[is.na(spider_data5)]<-0
+
+spider_data5<-rbind(rep(145,13), rep(0, 13),spider_data5)
+
+radarchart(spider_data5)
 
 
+```{r}
+
+phys<-indicators %>% 
+  filter(type == "Physical")
+
+spider_data5<-phys %>% 
+  group_by(indicator, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "indicator", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data5[is.na(spider_data5)]<-0
+
+spider_data5<-rbind(rep(145,13), rep(0, 13),spider_data5)
+
+radarchart(spider_data5)
+```

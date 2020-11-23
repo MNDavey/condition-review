@@ -46,93 +46,93 @@ recruitnemnt,1,coral,MSP,biological
 recovery time,1,coral,MSP,biological
 algal cover,1,algal cover,MSP,biological
 density of fish ,1,fauna,MSP,biological
-sedimentation ,15,,monitoring ,physical
-SST,12,,monitoring ,physical
-Water Quality ,13,,monitoring ,physical
-Depth,10,,monitoring ,physical
-Management status ,10,,monitoring ,socio-economic
-Fishing pressure/impact ,8,,monitoring ,socio-economic
-Historical disturbance data/human use ,8,,monitoring ,socio-economic
-landuse,6,,monitoring ,socio-economic
-Urban impact/Coastal development,5,,monitoring ,socio-economic
-Runoff,5,,monitoring ,socio-economic
-Damaging winds/cyclone,5,,monitoring ,physical
-Salinity ,6,,monitoring ,physical
-Wave expousure ,4,,monitoring ,physical
-Shipping/Boat traffic,4,,monitoring ,socio-economic
-tourism,4,,monitoring ,socio-economic
-chloryhyl a,4,,monitoring ,physical
-pollution,3,,monitoring ,socio-economic
-nutrient loads ,3,,monitoring ,physical
-seasonal vairation,2,,monitoring ,physical
-Rainfall,2,,monitoring ,physical
-Distance to shore,2,,monitoring ,socio-economic
-fresh water impact,1,,monitoring ,physical
-glenaing,1,,monitoring ,socio-economic
-sandmining,1,,monitoring ,socio-economic
-stressors,1,,monitoring ,physical
-historical human use,1,,monitoring ,socio-economic
-climate change,1,,monitoring ,physical
-socio-economic status,1,,monitoring ,socio-economic
-ocean colour,1,,monitoring ,physical
-dredging ,1,,monitoring ,socio-economic
-light,1,,monitoring ,physical
-port activties,1,,monitoring ,socio-economic
+sedimentation ,15,water quality,monitoring ,physical
+SST,12,tempreture,monitoring ,physical
+Water Quality ,13,water quality,monitoring ,physical
+Depth,10,depth,monitoring ,physical
+Management status ,10,Direct human use,monitoring ,socio-economic
+Fishing pressure/impact ,8,Direct human use,monitoring ,socio-economic
+Historical disturbance data/human use ,8,Direct human use,monitoring ,socio-economic
+landuse,6,Direct human use,monitoring ,socio-economic
+Urban impact/Coastal development,5,Direct human use,monitoring ,socio-economic
+Runoff,5,Direct human use,monitoring ,socio-economic
+Damaging winds/cyclone,5,disturbances,monitoring ,physical
+Salinity ,6,water quality,monitoring ,physical
+Wave expousure ,4,disturbances,monitoring ,physical
+Shipping/Boat traffic,4,Direct human use,monitoring ,socio-economic
+tourism,4,Direct human use,monitoring ,socio-economic
+chloryhyl a,4,water quality,monitoring ,physical
+pollution,3,Direct human use,monitoring ,socio-economic
+nutrient loads ,3,water quality,monitoring ,physical
+seasonal vairation,2,weather,monitoring ,physical
+Rainfall,2,weather,monitoring ,physical
+Distance to shore,2,Direct human use,monitoring ,socio-economic
+fresh water impact,1,water quality,monitoring ,physical
+glenaing,1,Direct human use,monitoring ,socio-economic
+sandmining,1,Direct human use,monitoring ,socio-economic
+stressors,1,disturbances,monitoring ,physical
+historical human use,1,Direct human use,monitoring ,socio-economic
+climate change,1,climate change ,monitoring ,physical
+socio-economic status,1,Direct human use,monitoring ,socio-economic
+ocean colour,1,water quality,monitoring ,physical
+dredging ,1,Direct human use,monitoring ,socio-economic
+light,1,light,monitoring ,physical
+port activties,1,Direct human use,monitoring ,socio-economic
 terrestrial vegigation,1,,monitoring ,physical
 radiation,1,,monitoring ,physical
 tidal range,1,,monitoring ,physical
-Recreational fishing,4,,MSP,socio-economic
-Human use,1,,MSP,socio-economic
+Recreational fishing,4,Direct human use,MSP,socio-economic
+Human use,1,Direct human use,MSP,socio-economic
 SST,4,,MSP,physical
 DHW,2,,MSP,physical
-human trampling ,3,,MSP,socio-economic
+human trampling ,3,Direct human use,MSP,socio-economic
 nutrient input,2,,MSP,physical
 organic pollution ,3,,MSP,physical
-inorganic pollution,3,,MSP,socio-economic
-coastal engenieering,2,,MSP,socio-economic
-coastal power plants ,2,,MSP,socio-economic
+inorganic pollution,3,Direct human use,MSP,socio-economic
+coastal engenieering,2,Direct human use,MSP,socio-economic
+coastal power plants ,2,Direct human use,MSP,socio-economic
 sediment decrease ,2,,MSP,physical
 noise/light pollution,2,,MSP,physical
 atmospheric deposition of pollutants ,2,,MSP,physical
-commerical shipping ,2,,MSP,socio-economic
+commerical shipping ,2,Direct human use,MSP,socio-economic
 ocean based pollution,2,,MSP,physical
-commerical fishing,2,,MSP,socio-economic
-acidification,2,,MSP,physical
+commerical fishing,2,Direct human use,MSP,socio-economic
+acidification,2,climate change ,MSP,physical
 UV,2,,MSP,physical
-DO,1,,MSP,physical
-pH,1,,MSP,physical
+DO,1,water quality,MSP,physical
+pH,1,water quality,MSP,physical
 radiation,1,,MSP,physical
-diffuse attenuation,1,,MSP,physical
+diffuse attenuation,1,water quality,MSP,physical
 calcite,1,,MSP,physical
-coastal development,1,,MSP,socio-economic
-habours,1,,MSP,socio-economic
-structures,1,,MSP,socio-economic
-sewage,1,,MSP,socio-economic
-aquaculture,1,,MSP,socio-economic
-freshwater infulence,1,,MSP,physical
-land based impacts,1,,MSP,socio-economic
-historical data,1,,MSP,socio-economic
-cyclone wave damage,1,,MSP,physical
-ecosystem services,1,,MSP,socio-economic
+coastal development,1,Direct human use,MSP,socio-economic
+habours,1,Direct human use,MSP,socio-economic
+structures,1,Direct human use,MSP,socio-economic
+sewage,1,Direct human use,MSP,socio-economic
+aquaculture,1,Direct human use,MSP,socio-economic
+freshwater infulence,1,water quality,MSP,physical
+land based impacts,1,Direct human use,MSP,socio-economic
+historical data,1,Direct human use,MSP,socio-economic
+cyclone wave damage,1,disturbances,MSP,physical
+ecosystem services,1,Direct human use,MSP,socio-economic
 habitat risk,1,,MSP,physical
-water quality,1,,MSP,physical
-management effectivness,1,,MSP,socio-economic
-projected stressors,2,,MSP,physical
-frequency of events,1,,MSP,physical
-damaging winds,1,,MSP,physical
+water quality,1,water quality,MSP,physical
+management effectivness,1,Direct human use,MSP,socio-economic
+projected stressors,2,climate change ,MSP,physical
+frequency of events,1,climate change ,MSP,physical
+damaging winds,1,climate change ,MSP,physical
 connectivity,2,,MSP,physical
-"Piers, breakwaters and groynes/shoreline amouring",2,,MSP,socio-economic
-Diamond/mineral mining,1,,MSP,socio-economic
-Sand mining,1,,MSP,socio-economic
-Groundwater extraction,1,,MSP,socio-economic
-Reduced estuarine flow,1,,MSP,physical
+"Piers, breakwaters and groynes/shoreline amouring",2,Direct human use,MSP,socio-economic
+Diamond/mineral mining,1,Direct human use,MSP,socio-economic
+Sand mining,1,Direct human use,MSP,socio-economic
+Groundwater extraction,1,Direct human use,MSP,socio-economic
+Reduced estuarine flow,1,water quality,MSP,physical
 Beach nourishment,1,,MSP,physical
-Solid waste (litter),1,,MSP,socio-economic
-Harvesting of invertebrates,1,,MSP,socio-economic
-Kelp/wrack/seaweed harvesting,1,,MSP,socio-economic
-gleaning,1,,MSP,physical
-Beach driving,1,,MSP,socio-economic
-Road density ,1,,MSP,socio-economic
-logged area ,1,,MSP,socio-economic
-urban area ,1,,MSP,socio-economic
-agricultural area ,1,,MSP,socio-economic
+Solid waste (litter),1,Direct human use,MSP,socio-economic
+Harvesting of invertebrates,1,Direct human use,MSP,socio-economic
+Kelp/wrack/seaweed harvesting,1,Direct human use,MSP,socio-economic
+gleaning,1,Direct human use,MSP,socio-economic
+Beach driving,1,Direct human use,MSP,socio-economic
+Road density ,1,Direct human use,MSP,socio-economic
+logged area ,1,Direct human use,MSP,socio-economic
+urban area ,1,Direct human use,MSP,socio-economic
+agricultural area ,1,Direct human use,MSP,socio-economic
