@@ -48,12 +48,14 @@ ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +
 monitor<-indicators %>% 
   filter(method == "Monitoring")
 
-mon_plot<-ggplot(monitor, aes(x=group, y=mentions, fill= indicator)) +
+mon_plot<-ggplot(monitor, aes(x=indicator, y=mentions, fill= method)) +
   geom_bar(position="stack", stat="identity")+ #changed to stack bar so that you can see the # of mentions
   theme_bw()+
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
-  facet_wrap (vars(type), nrow = 3) 
+  facet_wrap (vars(type), nrow = 3) +
+  coord_polar(start = 0)
+
 
 mon_plot
 ```
@@ -89,6 +91,17 @@ head(scatterindi)
 ```
 
 ```{r}
+ggplot(indicators, aes(x=indicator, y=mentions, fill= method)) +
+ geom_bar(position="stack", stat="identity")+ 
+    theme_bw()+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
+  coord_polar(start = 0)
+
+```
+
+
+```{r}
   ggplot(scatterindi, aes(x= MSP, y= Monitoring, colour = group)) + 
   geom_point(aes(shape = type))
 
@@ -100,6 +113,21 @@ head(scatterindi)
 
   
 ```
+
+```{r}
+monitor<-scatterindi %>% 
+  filter(method == "Monitoring")
+
+mon_plot<-ggplot(monitor, aes(x=group, y=mentions, fill= indicator)) +
+  geom_bar(position="stack", stat="identity")+ #changed to stack bar so that you can see the # of mentions
+  theme_bw()+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  facet_wrap (vars(type), nrow = 3) 
+```
+
+
+
 
 # Trying a heat/tile map
 
@@ -252,6 +280,23 @@ spider_data5[is.na(spider_data5)]<-0
 spider_data5<-rbind(rep(145,13), rep(0, 13),spider_data5)
 
 radarchart(spider_data5)
+```{r}
+
+soc<-indicators %>% 
+  filter(type == "Socio-economic")
+
+spider_data5<-soc %>% 
+  group_by(indicator, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "indicator", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data5[is.na(spider_data5)]<-0
+
+spider_data5<-rbind(rep(10,88), rep(0, 88),spider_data5)
+
+radarchart(spider_data5)
+```
 
 
 ```{r}
@@ -267,7 +312,9 @@ spider_data5<-phys %>%
 
 spider_data5[is.na(spider_data5)]<-0
 
-spider_data5<-rbind(rep(145,13), rep(0, 13),spider_data5)
+spider_data5<-rbind(rep(14,13), rep(0, 13),spider_data5)
+
+#the rbind is (rep())
 
 radarchart(spider_data5)
 ```

@@ -1,0 +1,42 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+```{r}
+library(wordcloud2)
+```
+```{r}
+wordcloud2(indicators, color = "random-dark", backgroundColor = "White")
+```
+
+
+
+
+```{r}
+
+phys<-indicators %>% 
+  filter(type == "Physical")
+
+ol_plot<-ggplot(phys, aes(x=group, y=log(mentions), fill= method)) +
+  geom_col() + 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 133/360, vjust = 0.5, hjust=1))+
+  coord_polar(start=0)
+ol_plot
+
+
+#figure out angle for text 
+#try flip colours - scale fill manual or flip etc 
+
+
+```
+
