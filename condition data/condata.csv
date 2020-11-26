@@ -1,134 +1,133 @@
 indicator,mentions,group,method,type
-rubble,3,Benthos,Monitoring ,Biological 
-Rugosity/complexity/surface area ,9,Benthos,Monitoring ,Biological 
-significant features,1,Benthos,Monitoring ,Biological 
-substrate/benthic composition ,15,Benthos,Monitoring ,Biological 
-biochemical processes in coral,1,Coral,Monitoring ,Biological 
+Rubble,3,Benthos,Monitoring ,Biological 
+Rugosity/Complexity/Surface Area ,9,Benthos,Monitoring ,Biological 
+Significant Features,1,Benthos,Monitoring ,Biological 
+Substrate/Benthic Composition ,15,Benthos,Monitoring ,Biological 
+Biochemical Processes In Coral,1,Coral,Monitoring ,Biological 
 Bleaching,19,Coral,Monitoring ,Biological 
-coral colony size,17,Coral,Monitoring ,Biological 
-coral cover ,50,Coral,Monitoring ,Biological 
-coral species diversity/composition,17,Coral,Monitoring ,Biological 
-Dead coral ,14,Coral,Monitoring ,Biological 
-diseased coral,15,Coral,Monitoring ,Biological 
-juvenile coral/new recruits ,8,Coral,Monitoring ,Biological 
-number of colonies ,1,Coral,Monitoring ,Biological 
-soft coral,3,Coral,Monitoring ,Biological 
+Coral Colony Size,17,Coral,Monitoring ,Biological 
+Coral Cover ,50,Coral,Monitoring ,Biological 
+Coral Species Diversity/Composition,17,Coral,Monitoring ,Biological 
+Dead Coral ,14,Coral,Monitoring ,Biological 
+Diseased Coral,15,Coral,Monitoring ,Biological 
+Juvenile Coral/New Recruits ,8,Coral,Monitoring ,Biological 
+Number Of Colonies ,1,Coral,Monitoring ,Biological 
+Soft Coral,3,Coral,Monitoring ,Biological 
 DNA,1,DNA,Monitoring ,Biological 
-benthic organisms,7,Fauna,Monitoring ,Biological 
-butterfly fish,2,Fauna,Monitoring ,Biological 
+Benthic Organisms,7,Fauna,Monitoring ,Biological 
+Butterfly Fish,2,Fish,Monitoring ,Biological 
 COTS,4,Fauna,Monitoring ,Biological 
-damselfish numbers ,1,Fauna,Monitoring ,Biological 
-fish bites,1,Fauna,Monitoring ,Biological 
-fish counts predators,1,Fauna,Monitoring ,Biological 
-fish diversity & abundance,1,Fauna,Monitoring ,Biological 
-fish functional groups,1,Fauna,Monitoring ,Biological 
-focal species,1,Fauna,Monitoring ,Biological 
-grazer population ,1,Fauna,Monitoring ,Biological 
-grouper ,1,Fauna,Monitoring ,Biological 
-Herbivory/Grazer species,7,Fauna,Monitoring ,Biological 
-invasive species,1,Fauna,Monitoring ,Biological 
-lobster ,1,Fauna,Monitoring ,Biological 
-monk seal,1,Fauna,Monitoring ,Biological 
-parrotfish abundance and size ,1,Fauna,Monitoring ,Biological 
-predators ,4,Fauna,Monitoring ,Biological 
-reef fish endemism,1,Fauna,Monitoring ,Biological 
+Damselfish Numbers ,1,Fish,Monitoring ,Biological 
+Fish Bites,1,Fish,Monitoring ,Biological 
+Fish Counts Predators,1,Fish,Monitoring ,Biological 
+Fish Diversity & Abundance,1,Fish,Monitoring ,Biological 
+Fish Functional Groups,1,Fish,Monitoring ,Biological 
+Focal Species,1,Fauna,Monitoring ,Biological 
+Grazer Population ,1,Fauna,Monitoring ,Biological 
+Grouper ,1,Fish,Monitoring ,Biological 
+Herbivory/Grazer Species,7,Fauna,Monitoring ,Biological 
+Invasive Species,1,Fauna,Monitoring ,Biological 
+Lobster ,1,Fauna,Monitoring ,Biological 
+Monk Seal,1,Fauna,Monitoring ,Biological 
+Parrotfish Abundance And Size ,1,Fish,Monitoring ,Biological 
+Predators ,4,Fauna,Monitoring ,Biological 
+Reef Fish Endemism,1,Fish,Monitoring ,Biological 
 Turtles,2,Fauna,Monitoring ,Biological 
-urchin presence,8,Fauna,Monitoring ,Biological 
+Urchin Presence,8,Fauna,Monitoring ,Biological 
 Algal Cover,27,Flora,Monitoring ,Biological 
 Mangrove,1,Flora,Monitoring ,Biological 
-marine plants,1,Flora,Monitoring ,Biological 
-seagrass/seaweed,1,Flora,Monitoring ,Biological 
-sponge,3,Flora,Monitoring ,Biological 
-habitat(biodiversity),1,Benthos,MSP,Biological 
-coral cover,2,Coral,MSP,Biological 
-Dead coral ,1,Coral,MSP,Biological 
-recovery time,1,Coral,MSP,Biological 
-juvenile coral/new recruits ,1,Coral,MSP,Biological 
-density of fish ,1,Fauna,MSP,Biological 
-invasive species,4,Fauna,MSP,Biological 
-predators ,1,Fauna,MSP,Biological 
+Marine Plants,1,Flora,Monitoring ,Biological 
+Seagrass/Seaweed,1,Flora,Monitoring ,Biological 
+Sponge,3,Flora,Monitoring ,Biological 
+Habitat(Biodiversity),1,Benthos,MSP,Biological 
+Coral Cover,2,Coral,MSP,Biological 
+Dead Coral ,1,Coral,MSP,Biological 
+Recovery Time,1,Coral,MSP,Biological 
+Juvenile Coral/New Recruits ,1,Coral,MSP,Biological 
+Density Of Fish ,1,Fish,MSP,Biological 
+Invasive Species,4,Fauna,MSP,Biological 
+Predators ,1,Fauna,MSP,Biological 
 Algal Cover,1,Flora,MSP,Biological 
-depth ,10,Depth,Monitoring ,Physical
-radiation,1,misc.,Monitoring ,Physical
-seasonal variation,2,misc.,Monitoring ,Physical
-stressors,1,misc.,Monitoring ,Physical
-tidal range,1,misc.,Monitoring ,Physical
-climate change,1,Physical,Monitoring ,Physical
-Damaging winds,5,Physical,Monitoring ,Physical
-,4,Physical,Monitoring ,Physical
+Depth ,10,Depth,Monitoring ,Physical
+Radiation,1,Inputs,Monitoring ,Physical
+Seasonal Variation,2,Inputs,Monitoring ,Physical
+Stressors,1,Disturbances,Monitoring ,Physical
+Tidal Range,1,Inputs,Monitoring ,Physical
+Climate Change,1,Disturbances,Monitoring ,Physical
+Damaging Winds,5,Disturbances,Monitoring ,Physical
 SST,12,Temperature ,Monitoring ,Physical
-chloryhyl a,4,Water Quality ,Monitoring ,Physical
-dredging ,1,Water Quality ,Monitoring ,Physical
-fresh water impact,1,Water Quality ,Monitoring ,Physical
-nutrient input,3,Water Quality ,Monitoring ,Physical
-ocean colour,1,Water Quality ,Monitoring ,Physical
+Chloryhyl a,4,Water Quality ,Monitoring ,Physical
+Dredging ,1,Water Quality ,Monitoring ,Physical
+Fresh Water Impact,1,Water Quality ,Monitoring ,Physical
+Nutrient Input,3,Water Quality ,Monitoring ,Physical
+Ocean Colour,1,Water Quality ,Monitoring ,Physical
 Rainfall,2,Water Quality ,Monitoring ,Physical
 Runoff,6,Water Quality ,Monitoring ,Physical
-sedimentation ,15,Water Quality ,Monitoring ,Physical
-terrestrial vegetation,1,Water Quality ,Monitoring ,Physical
+Sedimentation ,15,Water Quality ,Monitoring ,Physical
+Terrestrial Vegetation,1,Water Quality ,Monitoring ,Physical
 Water Quality ,13,Water Quality ,Monitoring ,Physical
 Salinity ,5,Water Quality ,Monitoring ,Physical
-acidification,2,Climate change,MSP,Physical
-DHW,2,Climate change,MSP,Physical
-SST,4,Climate change,MSP,Physical
-UV,2,Climate change,MSP,Physical
-cyclone wave damage,1,Disturbances,MSP,Physical
-Damaging winds,1,Disturbances,MSP,Physical
-frequency of disturbance events,1,Disturbances,MSP,Physical
-historical data,1,Disturbances,MSP,Physical
-projected stressors,2,Disturbances,MSP,Physical
-atmospheric deposition of pollutants ,2,misc.,MSP,Physical
-calcite,1,misc.,MSP,Physical
-connectivity,2,misc.,MSP,Physical
-diffuse attenuation,1,misc.,MSP,Physical
-habitat risk,1,misc.,MSP,Physical
-ocean based pollution,2,misc.,MSP,Physical
-fresh water impact,1,Water Quality ,MSP,Physical
-nutrient input,2,Water Quality ,MSP,Physical
-organic pollution ,3,Water Quality ,MSP,Physical
-sedimentation ,2,Water Quality ,MSP,Physical
+Acidification,2,Climate Change,MSP,Physical
+DHW,2,Climate Change,MSP,Physical
+SST,4,Climate Change,MSP,Physical
+UV,2,Climate Change,MSP,Physical
+Cyclone Wave Damage,1,Disturbances,MSP,Physical
+Damaging Winds,1,Disturbances,MSP,Physical
+Frequency Of Disturbance Events,1,Disturbances,MSP,Physical
+Historical Data,1,Disturbances,MSP,Physical
+Projected Stressors,2,Disturbances,MSP,Physical
+Atmospheric Deposition Of Pollutants ,2,Pollution,MSP,Physical
+Calcite,1,Inputs,MSP,Physical
+Connectivity,2,Spatial,MSP,Physical
+Diffuse Attenuation,1,Water Quality ,MSP,Physical
+Habitat Risk,1,Disturbances,MSP,Physical
+Ocean Based Pollution,2,Pollution,MSP,Physical
+Fresh Water Impact,1,Water Quality ,MSP,Physical
+Nutrient Input,2,Water Quality ,MSP,Physical
+Organic Pollution ,3,Pollution,MSP,Physical
+Sedimentation ,2,Water Quality ,MSP,Physical
 Water Quality ,1,Water Quality ,MSP,Physical
-Distance to shore,2,Direct human use,Monitoring ,Socio-economic 
-Fishing pressure/impact ,10,Direct human use,Monitoring ,Socio-economic 
-gleaning,1,Direct human use,Monitoring ,Socio-economic 
-historical data,10,Direct human use,Monitoring ,Socio-economic 
-land use,7,Direct human use,Monitoring ,Socio-economic 
-noise/light pollution,1,Direct human use,Monitoring ,Socio-economic 
-Management status ,10,Direct human use,Monitoring ,Socio-economic 
-pollution,3,Direct human use,Monitoring ,Socio-economic 
-port activities,1,Direct human use,Monitoring ,Socio-economic 
-Sand mining,1,Direct human use,Monitoring ,Socio-economic 
-Shipping/Boat traffic,4,Direct human use,Monitoring ,Socio-economic 
-socio-economic status,1,Direct human use,Monitoring ,Socio-economic 
-tourism,4,Direct human use,Monitoring ,Socio-economic 
-Urban impact/Coastal development,6,Direct human use,Monitoring ,Socio-economic 
-agricultural area ,1,Direct human use,MSP,Socio-economic 
-aquaculture,1,Direct human use,MSP,Socio-economic 
-Beach driving,1,Direct human use,MSP,Socio-economic 
-Beach grooming/cleaning,1,Direct human use,MSP,Socio-economic 
-Beach nourishment,1,Direct human use,MSP,Socio-economic 
-coastal development,1,Direct human use,MSP,Socio-economic 
-coastal engineering,2,Direct human use,MSP,Socio-economic 
-coastal power plants ,2,Direct human use,MSP,Socio-economic 
-commercial fishing,2,Direct human use,MSP,Socio-economic 
-commercial shipping ,2,Direct human use,MSP,Socio-economic 
-Diamond/mineral mining,1,Direct human use,MSP,Socio-economic 
-ecosystem services,1,Direct human use,MSP,Socio-economic 
-Groundwater extraction,1,Direct human use,MSP,Socio-economic 
-harbours,1,Direct human use,MSP,Socio-economic 
-Harvesting of invertebrates,1,Direct human use,MSP,Socio-economic 
-human trampling ,3,Direct human use,MSP,Socio-economic 
-inorganic pollution,3,Direct human use,MSP,Socio-economic 
-Kelp/wrack/seaweed harvesting,1,Direct human use,MSP,Socio-economic 
-land based impacts,1,Direct human use,MSP,Socio-economic 
-logged area ,1,Direct human use,MSP,Socio-economic 
-management effectiveness,1,Direct human use,MSP,Socio-economic 
-noise/light pollution,2,Direct human use,MSP,Socio-economic 
-"Piers, breakwaters and groynes/shoreline armouring",2,Direct human use,MSP,Socio-economic 
-Reduced estuarine flow,1,Direct human use,MSP,Socio-economic 
-Road density ,1,Direct human use,MSP,Socio-economic 
-Sand mining,1,Direct human use,MSP,Socio-economic 
-sewage,1,Direct human use,MSP,Socio-economic 
-Solid waste (litter),1,Direct human use,MSP,Socio-economic 
-structures,1,Direct human use,MSP,Socio-economic 
-Urban impact/Coastal development,1,Direct human use,MSP,Socio-economic 
+Distance To Shore,2,Spatial,Monitoring ,Physical
+Fishing Pressure/Impact ,10,Resource Extraction,Monitoring ,Socio-Economic 
+Gleaning,1,Resource Extraction,Monitoring ,Socio-Economic 
+Historical Data,10,Management,Monitoring ,Socio-Economic 
+Land Use,7,Urban Development,Monitoring ,Socio-Economic 
+Noise/Light Pollution,1,Polloution,Monitoring ,Socio-Economic 
+Management Status ,10,Management,Monitoring ,Socio-Economic 
+Pollution,3,Polloution,Monitoring ,Socio-Economic 
+Port Activities,1,Shipping,Monitoring ,Socio-Economic 
+Sand Mining,1,Resource Extraction,Monitoring ,Socio-Economic 
+Shipping/Boat Traffic,4,Shipping,Monitoring ,Socio-Economic 
+Socio-Economic Status,1,Economic,Monitoring ,Socio-Economic 
+Tourism,4,Direct Human Use,Monitoring ,Socio-Economic 
+Urban Impact/Coastal Development,6,Urban Development,Monitoring ,Socio-Economic 
+Agricultural Area ,1,Urban Development,MSP,Socio-Economic 
+Aquaculture,1,Urban Development,MSP,Socio-Economic 
+Beach Driving,1,Direct Human Use,MSP,Socio-Economic 
+Beach Grooming/Cleaning,1,Urban Development,MSP,Socio-Economic 
+Beach Nourishment,1,Inputs,MSP,Physical
+Coastal Development,1,Urban Development,MSP,Socio-Economic 
+Coastal Engineering,2,Urban Development,MSP,Socio-Economic 
+Coastal Power Plants ,2,Urban Development,MSP,Socio-Economic 
+Commercial Fishing,2,Resource Extraction,MSP,Socio-Economic 
+Commercial Shipping ,2,Shipping,MSP,Socio-Economic 
+Diamond/Mineral Mining,1,Resource Extraction,MSP,Socio-Economic 
+Ecosystem Services,1,Economic,MSP,Socio-Economic 
+Groundwater Extraction,1,Resource Extraction,MSP,Socio-Economic 
+Harbours,1,Shipping,MSP,Socio-Economic 
+Harvesting Of Invertebrates,1,Resource Extraction,MSP,Socio-Economic 
+Human Trampling ,3,Direct Human Use,MSP,Socio-Economic 
+Inorganic Pollution,3,Polloution,MSP,Socio-Economic 
+Kelp/Wrack/Seaweed Harvesting,1,Resource Extraction,MSP,Socio-Economic 
+Land Based Impacts,1,Urban Development,MSP,Socio-Economic 
+Logged Area ,1,Resource Extraction,MSP,Socio-Economic 
+Management Effectiveness,1,Management,MSP,Socio-Economic 
+Noise/Light Pollution,2,Polloution,MSP,Socio-Economic 
+"Piers, Breakwaters And Groynes/Shoreline Armouring",2,Urban Development,MSP,Socio-Economic 
+Reduced Estuarine Flow,1,Direct Human Use,MSP,Socio-Economic 
+Road Density ,1,Urban Development,MSP,Socio-Economic 
+Sand Mining,1,Resource Extraction,MSP,Socio-Economic 
+Sewage,1,Polloution,MSP,Socio-Economic 
+Solid Waste (Litter),1,Polloution,MSP,Socio-Economic 
+Structures,1,Urban Development,MSP,Socio-Economic 
+Urban Impact/Coastal Development,1,Urban Development,MSP,Socio-Economic 

@@ -1,0 +1,98 @@
+---
+title: "spider plots"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(here)
+library(tidyverse)
+library(patchwork)
+library(fmsb)
+library(dplyr)
+```
+
+```{r}
+
+indicators<- read_csv("condata.csv")
+
+indicators %>% arrange(mentions)
+
+
+bio<-indicators %>% 
+  filter(type == "Biological")
+  
+spider_data1<-bio %>% 
+  group_by(group, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "group", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method") 
+
+spider_data1[is.na(spider_data1)]<-0
+
+spider_data1<-rbind(rep(145,5), rep(0, 5),spider_data1)
+  
+
+radarchart(spider_data1, axistype = 1, seg = 6, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
+    #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0, 150, 25), cglwd=0.5,
+    #custom labels
+    vlcex=0.9 )
+```
+
+
+
+```{r}
+
+phys<-indicators %>% 
+  filter(type == "Physical")
+  
+
+
+spider_data2<-phys %>% 
+  group_by(group, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "group", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method") 
+
+spider_data2[is.na(spider_data2)]<-0
+
+spider_data2<-rbind(rep(55,7), rep(0, 7),spider_data2)
+
+radarchart(spider_data2, axistype = 1, seg=6, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
+    #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,60,10), cglwd=0.5,
+    #custom labels i made them 1 to edit in illustrator 
+    vlcex=0.1)
+
+```
+
+
+```{r}
+
+socio<-indicators %>% 
+  filter(type == "Socio-Economic")
+
+
+spider_data3<-socio %>% 
+  group_by(group, method) %>% 
+  summarise(total_m = sum(mentions, na.rm = T)) %>% 
+  pivot_wider(., names_from = "group", values_from = "total_m") %>% 
+  column_to_rownames(., var = "method")
+
+spider_data3[is.na(spider_data3)]<-0
+
+spider_data3<-rbind(rep(20,7), rep(0, 7),spider_data3)
+
+radarchart(spider_data3, axistype = 1, seg = 5, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
+    #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,4), cglwd=0.9,
+    #custom labels
+    vlcex=0.9) 
+```
+
+

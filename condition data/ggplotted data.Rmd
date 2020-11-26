@@ -281,14 +281,14 @@ spider_data5<-rbind(rep(145,13), rep(0, 13),spider_data5)
 
 radarchart(spider_data5)
 ```{r}
-
+indicators
 soc<-indicators %>% 
   filter(type == "Socio-economic")
 
 spider_data5<-soc %>% 
-  group_by(indicator, method) %>% 
+  group_by(group, method) %>% 
   summarise(total_m = sum(mentions, na.rm = T)) %>% 
-  pivot_wider(., names_from = "indicator", values_from = "total_m") %>% 
+  pivot_wider(., names_from = "group", values_from = "total_m") %>% 
   column_to_rownames(., var = "method")
 
 spider_data5[is.na(spider_data5)]<-0
