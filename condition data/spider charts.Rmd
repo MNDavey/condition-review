@@ -22,6 +22,10 @@ indicators<- read_csv("condata.csv")
 
 indicators %>% arrange(mentions)
 
+# Color vector
+colors_border=c( rgb(0.2,0.5,0.5,0.9), rgb(0.8,0.2,0.5,0.9) , rgb(0.7,0.5,0.1,0.9) )
+colors_in=c( rgb(0.2,0.5,0.5,0.4), rgb(0.8,0.2,0.5,0.4) , rgb(0.7,0.5,0.1,0.4) )
+
 
 bio<-indicators %>% 
   filter(type == "Biological")
@@ -39,9 +43,9 @@ spider_data1<-rbind(rep(145,5), rep(0, 5),spider_data1)
 
 radarchart(spider_data1, axistype = 1, seg = 6, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
-    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0, 150, 25), cglwd=0.5,
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0, 150, 25), cglwd=0.2,
     #custom labels
-    vlcex=0.9 )
+    vlcex=0.1)
 ```
 
 
@@ -92,7 +96,9 @@ radarchart(spider_data3, axistype = 1, seg = 5, pcol = colors_border, pfcol = co
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
     cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,4), cglwd=0.9,
     #custom labels
-    vlcex=0.9) 
+    vlcex=0.1) 
+
+rm(list=ls())
 ```
 
 
