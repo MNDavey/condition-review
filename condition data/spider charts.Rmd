@@ -43,7 +43,7 @@ spider_data1<-rbind(rep(145,5), rep(0, 5),spider_data1)
 
 radarchart(spider_data1, axistype = 1, seg = 6, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
-    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0, 150, 25), cglwd=0.2,
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0, 150, 25), calcex = 0.8,  cglwd=0.3,
     #custom labels
     vlcex=0.1)
 ```
@@ -69,7 +69,7 @@ spider_data2<-rbind(rep(55,7), rep(0, 7),spider_data2)
 
 radarchart(spider_data2, axistype = 1, seg=6, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
-    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,60,10), cglwd=0.5,
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,60,10), calcex = 0.8, cglwd=0.5,
     #custom labels i made them 1 to edit in illustrator 
     vlcex=0.1)
 
@@ -94,11 +94,10 @@ spider_data3<-rbind(rep(20,7), rep(0, 7),spider_data3)
 
 radarchart(spider_data3, axistype = 1, seg = 5, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
-    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,4), cglwd=0.9,
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,4), calcex = 0.8, cglwd=0.9,
     #custom labels
     vlcex=0.1) 
 
-rm(list=ls())
 ```
 
 
