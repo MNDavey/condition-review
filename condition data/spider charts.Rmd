@@ -43,9 +43,10 @@ spider_data1<-rbind(rep(145,5), rep(0, 5),spider_data1)
 
 radarchart(spider_data1, axistype = 1, seg = 6, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
-    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0, 150, 25), calcex = 0.8,  cglwd=0.3,
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0, 150, 25), calcex = 0.8,  cglwd=0.9,
     #custom labels
-    vlcex=0.1)
+    vlcex=0.9)
+
 ```
 
 
@@ -69,9 +70,8 @@ spider_data2<-rbind(rep(55,7), rep(0, 7),spider_data2)
 
 radarchart(spider_data2, axistype = 1, seg=6, pcol = colors_border, pfcol = colors_in, plwd=1.5 , plty=1,
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
-    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,60,10), calcex = 0.8, cglwd=0.5,
-    #custom labels i made them 1 to edit in illustrator 
-    vlcex=0.1)
+    cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,60,10), calcex = 0.8, cglwd=0.5,  vlcex=0.01)
+    #custom labels i made them 1 to edit in illustrator )
 
 ```
 
@@ -96,8 +96,61 @@ radarchart(spider_data3, axistype = 1, seg = 5, pcol = colors_border, pfcol = co
     #custom the grid - order is grid colour, line type, axis labes start, max, increments, net width, group label size 
     cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,4), calcex = 0.8, cglwd=0.9,
     #custom labels
-    vlcex=0.1) 
+    vlcex=0.9) 
 
 ```
 
+lollypop charts to compliment: 
+
+
+
+```{r}
+# Create data: note in High school for Jonathan:
+set.seed(1)
+data <-as.data.frame(matrix( sample( 2:20 , 20 , replace=T) , ncol=10))
+colnames(data) <- c("math" , "english" , "biology" , "music" , "R-coding", "data-viz" , "french" , "physic", "statistic", "sport" )
+data <-rbind(rep(20,10) , rep(0,10) , data)
+
+data
+
+# Barplot
+data %>% slice(c(3,4)) %>% t() %>% as.data.frame() %>% add_rownames() %>% arrange(V1) %>% mutate(rowname=factor(rowname, rowname)) #%>%
+  ggplot( aes(x=rowname, y=V1)) +
+    geom_segment( aes(x=rowname ,xend=rowname, y=V2, yend=V1), color="grey") +
+    geom_point(size=5, color="#69b3a2") +
+    geom_point(aes(y=V2), size=5, color="#69b3a2", alpha=0.1) +
+    coord_flip() +
+    theme_ipsum() +
+    theme(
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.y = element_blank(),
+      axis.text = element_text( size=48 )
+    ) +
+    ylim(0,20) +
+    ylab("mark") +
+    xlab("")
+```
+
+```{r}
+
+
+social<-scatterindi %>% 
+  filter(type == "Socio-Economic") %>% 
+ggplot( aes(x=indicator, y=Monitoring)) +
+    geom_segment( aes(x=indicator, xend=indicator, y=Monitoring, yend=MSP), color="grey") +
+    geom_point(size=5, color="pink") +
+    geom_point(aes(y=MSP), size=5, color="blue", alpha=0.1) +
+    coord_flip() +
+    #theme_ipsum() 
+    theme(
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.y = element_blank(),
+      axis.text = element_text( size=8)
+    ) +
+    ylim(0,20) +
+    ylab("mark") +
+    xlab("")
+
+social
+```
 
