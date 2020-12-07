@@ -138,8 +138,8 @@ social<-scatterindi %>%
   filter(type == "Socio-Economic") %>% 
 ggplot( aes(x=indicator, y=Monitoring)) +
     geom_segment( aes(x=indicator, xend=indicator, y=Monitoring, yend=MSP), color="grey") +
-    geom_point(size=5, color="pink", alpha =0.5) +
-    geom_point(aes(y=MSP), size=5, color="blue", alpha=0.1) +
+    geom_point(size=4, color="pink", alpha =0.5) +
+    geom_point(aes(y=MSP), size=4, color="blue", alpha=0.1) +
     coord_flip() +
     #theme_ipsum() 
     theme(
@@ -147,7 +147,7 @@ ggplot( aes(x=indicator, y=Monitoring)) +
       panel.grid.major.y = element_blank(),
       axis.text = element_text( size=8)
     ) +
-    ylim(0,10) +
+    ylim(0,10) + #i would like to work out how to do this with 0-10 written and not Deci place 
     ylab("") +
     xlab("")
 

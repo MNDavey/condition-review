@@ -24,6 +24,8 @@ indicators <- read_csv("condata.csv")[,1:5]
 
 #hashed these out because i fixed it in excel when doing quality check 
 
+indicators
+
 ggplot(indicators, aes(x=group, y=mentions, fill= indicator)) +
   geom_col() + 
   theme(legend.position = "none",
@@ -87,7 +89,7 @@ scatterindi<- indicators %>%
   pivot_wider(names_from = method, values_from = mentions) %>% 
   replace_na(list(MSP = 0, Monitoring = 0)) 
 head(scatterindi)
-
+scatterindi
 ```
 
 ```{r}
